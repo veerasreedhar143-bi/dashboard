@@ -1,0 +1,65 @@
+/* Reset */
+
+
+/* Full Background Cover */
+.employee-page {
+  background: linear-gradient(180deg, white, aqua);
+  min-height: calc(100vh - 60px);
+  width: 100%;
+   padding-top:60px;
+
+}
+
+
+/* Employee Header */
+
+  .employee-page .header-part{
+  background-color:#75ba75;
+  text-align:center;
+  padding:15px;
+  width:calc(100vw - 220px);
+
+  position:fixed;
+  top:60px;        /* 🔥 purple header height */
+  left:220px;      /* 🔥 sidebar width */
+  z-index:998;
+}
+
+
+.employee-page .header-part h3 {
+  font-size: 22px;
+
+}
+
+/* Content Area */
+.employee-page .main-c {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  row-gap: 80px;
+  text-align: center;
+
+  width: 100%; /* 🔥 fit-content తీసేశాం */
+  max-width: 900px; /* center limit (same look) */
+  margin: 0 auto;
+}
+
+/* Buttons */
+.employee-page .main-c a {
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 2px solid lightsalmon;
+  border-radius: 10px;
+  font-size: 30px;
+  background-color: #f0f0f0;
+}
+
+/* Hover */
+.employee-page .main-c a:hover {
+  background-color: rgb(222, 147, 151);
+  color: white;
+  transform: scale(1.05);
+}
+y

@@ -1,0 +1,19 @@
+<div class="profile-wrapper">
+
+    <!-- LEFT SIDE LIST -->
+    <div class="profile-list">
+
+        {% for emp in employees %}
+        <div class="emp-name" data-id="{{ emp.id }}">
+            {{ emp.employee_name }}
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <!-- RIGHT SIDE PROFILE VIEW -->
+    <div class="profile-view" id="profileView">
+        <h3 class="placeholder">Select employee to view profile</h3>
+    </div>
+
+</div>

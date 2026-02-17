@@ -1,0 +1,39 @@
+
+<div class=employee_list_page>
+<table border="1">
+    <tr>
+        <th>Employee Name</th>
+        <th>Employee ID</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Job Role</th>
+        <th>Department</th>
+        <th>Joining Date</th>
+        <th>Experience</th>
+        <th>Skills</th>
+        <th>Resume</th>
+    </tr>
+
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.employee_name }}</td>
+        <td>{{ emp.employee_id }}</td>
+        <td>{{ emp.phone }}</td>
+        <td>{{ emp.address }}</td>
+        <td>{{ emp.job_role }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.joining_date }}</td>
+        <td>{{ emp.experience }}</td>
+        <td>{{ emp.skills }}</td>
+        <td>
+            {% if emp.resume %}
+                <a href="{{ emp.resume.url }}">View</a>
+            {% else %}
+                No File
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+</div>

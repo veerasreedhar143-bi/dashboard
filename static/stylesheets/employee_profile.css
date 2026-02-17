@@ -1,0 +1,63 @@
+/* layout */
+.profile-wrapper{
+display:flex;
+height:calc(100vh - 60px);
+background:#f5f6fa;
+}
+
+/* left list */
+.profile-list{
+width:25%;
+background:#2f3542;
+padding:15px;
+color:white;
+overflow-y:auto;
+}
+
+.emp-name{
+padding:12px;
+margin-bottom:8px;
+background:#57606f;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.emp-name:hover{
+background:#be95be;
+}
+
+/* right panel */
+.profile-view{
+width:75%;
+padding:30px;
+}
+
+.placeholder{
+color:#888;
+}
+
+/* card */
+.profile-card{
+background:white;
+padding:25px;
+width:400px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-header{
+text-align:center;
+margin-bottom:20px;
+}
+
+.profile-header img{
+width:110px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+.profile-body p{
+margin:6px 0;
+font-size:15px;
+}

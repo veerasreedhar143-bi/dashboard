@@ -1,0 +1,64 @@
+/* Reset */
+.attendance-page * {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Full Background Cover */
+.attendance-page {
+  background: linear-gradient(180deg, orange, yellow);
+  min-height: calc(100vh - 60px);
+
+  width: 100vw; /* 🔥 full screen width */
+  margin-left: -200px; /* 🔥 sidebar width compensate */
+}
+
+/* Attendance Header */
+.attendance-page .attendance-header {
+  background-color: #75ba75;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+}
+
+.attendance-page .attendance-header h1 {
+  font-size: 22px;
+}
+
+/* Content Area */
+.attendance-page .attendance-main {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  row-gap: 80px;
+  text-align: center;
+
+  width: 100%;
+  max-width: 900px; /* 🔥 same centered look */
+  margin: 0 auto; /* 🔥 center grid */
+}
+
+/* Buttons */
+.attendance-page .attendance-main a {
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+
+  border-bottom: 2px solid lightsalmon;
+  border-radius: 10px;
+  font-size: 30px;
+
+  background-color: #f0f0f0;
+  color: #444;
+
+  transition: 0.3s;
+}
+
+/* Hover */
+.attendance-page .attendance-main a:hover {
+  background-color: rgb(222, 147, 151);
+  color: white;
+  transform: scale(1.05);
+}

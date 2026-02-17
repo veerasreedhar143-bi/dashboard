@@ -1,0 +1,24 @@
+.employee_list_page {
+  background: linear-gradient(45deg,pink,pink);
+  min-height: calc(100vh - 60px);
+
+  width: 100%;     /* 🔥 main-content width మాత్రమే */
+  margin-left: 0;
+  padding: 10px; /* 🔥 negative margin remove */
+}
+.employee_list_page table {
+  border-collapse: collapse;
+  margin-top: 20px;      /* 🔥 header నుండి space */
+  margin-left: 20px;     /* 🔥 sidebar నుండి space */
+  background: #dfb881;   /* optional */
+}
+
+.employee_list_page th,
+.employee_list_page td {
+  padding: 10px 14px;    /* 🔥 cells కి breathing space */
+  text-align: left;
+}
+.employee_list_page table {
+  border-radius: 8px;
+  overflow: hidden;
+}
