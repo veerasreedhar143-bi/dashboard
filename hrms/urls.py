@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from employee import views
+from employee.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.homepage),
     path('e/',include('employee.urls')),
     path('a/',include('attendance.urls')),
+
+    path('update_employee/<int:id>/', update_employee),
+    path('delete_employee/<int:id>/', delete_employee),
 ]

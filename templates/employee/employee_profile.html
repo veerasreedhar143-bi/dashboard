@@ -1,19 +1,21 @@
-<div class="profile-wrapper">
+<div class="employee-profile-page">
 
-    <!-- LEFT SIDE LIST -->
-    <div class="profile-list">
+    <div class="employee-profile-wrapper">
 
-        {% for emp in employees %}
-        <div class="emp-name" data-id="{{ emp.id }}">
-            {{ emp.employee_name }}
+        <!-- LEFT LIST -->
+        <div class="employee-profile-list">
+            {% for emp in employees %}
+                <div class="emp-name" data-id="{{ emp.id }}">
+                    {{ emp.employee_name }}
+                </div>
+            {% endfor %}
         </div>
-        {% endfor %}
 
-    </div>
+        <!-- RIGHT PANEL -->
+        <div class="employee-profile-view" id="profileView">
+            <h3 class="placeholder">Select employee to view profile</h3>
+        </div>
 
-    <!-- RIGHT SIDE PROFILE VIEW -->
-    <div class="profile-view" id="profileView">
-        <h3 class="placeholder">Select employee to view profile</h3>
     </div>
 
 </div>

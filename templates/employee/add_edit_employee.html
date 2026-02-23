@@ -16,9 +16,13 @@
 <td>{{ e.employee_id }}</td>
 <td>{{ e.job_role }}</td>
 <td>{{ e.department }}</td>
-<td><span><a href="#">delete</a></span><span><a href="#">update</a></span></td>
+<td><span><a href="/delete_employee/{{ e.id }}/"
+   onclick="return confirm('Are you sure?')">
+   delete
+</a></span><span><a href="/update_employee/{{ e.id }}/">update</a></span></td>
 
 </tr>
 {% endfor %}
 </table>
+<button class="btn-add"><h3>Add employee</h3></button>
 </div>

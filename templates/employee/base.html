@@ -144,7 +144,7 @@ transform:rotate(180deg);
 </a>
 
 <div class="emp-dropdown" id="empDropdown">
-<a href="/e/employee_list/">Employee List</a>
+<a href="{% url 'employee_list' %}">Employee info</a>
 <a href="/e/add_edit_employee/">Add/Edit Employee</a>
 <a href="#">Employee Profile</a>
 </div>
@@ -162,77 +162,87 @@ transform:rotate(180deg);
 <h2>Dashboard</h2>
 <p>Main content goes here</p>
 </div>
-
 <script>
-     const links = document.querySelectorAll(".sidebar a");
-     function loadPage(page) {
-       fetch(page)
-         .then((response) => response.text())
-         .then((data) => {
-           document.querySelector(".main").innerHTML = data;
-         });
-     }
 
-     links[1].onclick = function (event) {
-       event.preventDefault();
-       loadPage("/e/employee/");
-     };
-     links[2].onclick = function (event){
-       event.preventDefault();
-       loadPage("/e/employee_list/");
-     }
-     links[3].onclick = function (event){
-       event.preventDefault();
-       loadPage("/e/add_edit_employee/");
-     }
-    links[4].onclick = function (event){
-      event.preventDefault();
-      loadPage("/e/employee_profile/");
-    }
+const links = document.querySelectorAll(".sidebar a");
 
-     links[5].onclick = function (event) {
-       event.preventDefault();
-       loadPage("/a/attendance/");
-     };
-     links[6].onclick = function (event) {
-       event.preventDefault();
-       loadPage("leaves.html");
-     };
+function loadPage(page) {
+  fetch(page)
+    .then((response) => response.text())
+    .then((data) => {
+      document.querySelector(".main").innerHTML = data;
+    });
+}
 
-     // ===== EMPLOYEE DROPDOWN TOGGLE =====
+/* ===== SIDEBAR AJAX LOAD ===== */
+
+links[1].onclick = function (event) {
+  event.preventDefault();
+  loadPage("/e/employee/");
+};
+
+links[2].onclick = function (event){
+  event.preventDefault();
+  loadPage("/e/employee_list/");
+}
+
+links[3].onclick = function (event){
+  event.preventDefault();
+  loadPage("/e/add_edit_employee/");
+}
+
+links[4].onclick = function (event){
+  event.preventDefault();
+  loadPage("/e/employee_profile/");
+}
+
+links[5].onclick = function (event) {
+  event.preventDefault();
+  loadPage("/a/attendance/");
+};
+
+links[6].onclick = function (event) {
+  event.preventDefault();
+  loadPage("leaves.html");
+};
+
+
+/* ===== EMPLOYEE DROPDOWN TOGGLE ===== */
+
 const empToggle = document.getElementById("empToggle");
 const empDropdown = document.getElementById("empDropdown");
 const arrowIcon = document.getElementById("arrowIcon");
 
 empToggle.addEventListener("click", function(e){
   e.preventDefault();
-
   empDropdown.classList.toggle("open");
   arrowIcon.classList.toggle("open");
 });
 
-// ===== EMPLOYEE PROFILE AJAX =====
+
+/* ===== EMPLOYEE NAME CLICK SAME PAGE LOAD (FIXED VERSION) ===== */
+
 document.addEventListener("click", function(e){
 
-if(e.target.classList.contains("emp-name")){
+  const link = e.target.closest(".emp-name");
 
-  const id = e.target.dataset.id;
+  if(link){
+      e.preventDefault();
 
-  fetch(`/e/profile_details/${id}/`)
-  .then(res => res.text())
-  .then(html=>{
-      const panel = document.querySelector("#profileView");
-      if(panel){
-          panel.innerHTML = html;
+      const id = link.getAttribute("data-id");
+
+      if(id){
+          fetch(`/e/employee_list/?id=${id}`)
+          .then(res => res.text())
+          .then(html=>{
+              document.querySelector(".main").innerHTML = html;
+          });
       }
-  });
-
-}
+  }
 
 });
 
-
-   </script>
+</script>
 
 
 </body>

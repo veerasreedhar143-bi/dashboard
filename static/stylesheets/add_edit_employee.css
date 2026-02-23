@@ -74,3 +74,21 @@
 .add_page a:hover{
     opacity: 0.85;
 }
+.btn-add {
+    margin-top: 20px;          /* Gap between table and button */
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff; /* Normal blue */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.btn-add:hover {
+    background-color: skyblue;
+    color: black;
+}

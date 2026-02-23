@@ -1,24 +1,61 @@
-.employee_list_page {
-  background: linear-gradient(45deg,pink,pink);
-  min-height: calc(100vh - 60px);
-
-  width: 100%;     /* 🔥 main-content width మాత్రమే */
-  margin-left: 0;
-  padding: 10px; /* 🔥 negative margin remove */
-}
-.employee_list_page table {
-  border-collapse: collapse;
-  margin-top: 20px;      /* 🔥 header నుండి space */
-  margin-left: 20px;     /* 🔥 sidebar నుండి space */
-  background: #dfb881;   /* optional */
+/* MAIN WRAPPER */
+.employee-list-wrapper{
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    align-items: flex-start;
 }
 
-.employee_list_page th,
-.employee_list_page td {
-  padding: 10px 14px;    /* 🔥 cells కి breathing space */
-  text-align: left;
+/* LEFT TABLE */
+.employee-list-table{
+    flex: 1;   /* Important */
 }
-.employee_list_page table {
-  border-radius: 8px;
-  overflow: hidden;
+
+/* TABLE STYLE */
+.employee-list-table table{
+    width: 100%;
+    border-collapse: collapse;
+    background: #2e3440;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.employee-list-table th,
+.employee-list-table td{
+    padding: 12px;
+    border: 1px solid #444;
+}
+
+.employee-list-table th{
+    background: #3b4252;
+}
+
+.employee-list-table tr:hover{
+    background: #434c5e;
+}
+
+/* CLICK NAME */
+.emp-name{
+    cursor: pointer;
+    padding: 6px 10px;
+    background: #4c566a;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.emp-name:hover{
+    background: #88c0d0;
+    color: black;
+}
+
+/* RIGHT PROFILE PANEL */
+.employee-list-profile{
+    flex: 1;   /* Important */
+    padding: 20px;
+}
+
+/* Placeholder */
+.placeholder{
+    color: #777;
+    font-size: 18px;
 }

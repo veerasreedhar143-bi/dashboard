@@ -1,39 +1,56 @@
+<div class="employee-list-wrapper">
 
-<div class=employee_list_page>
-<table border="1">
-    <tr>
-        <th>Employee Name</th>
-        <th>Employee ID</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>Job Role</th>
-        <th>Department</th>
-        <th>Joining Date</th>
-        <th>Experience</th>
-        <th>Skills</th>
-        <th>Resume</th>
-    </tr>
+    {% if not selected_emp %}
 
-    {% for emp in employees %}
-    <tr>
-        <td>{{ emp.employee_name }}</td>
-        <td>{{ emp.employee_id }}</td>
-        <td>{{ emp.phone }}</td>
-        <td>{{ emp.address }}</td>
-        <td>{{ emp.job_role }}</td>
-        <td>{{ emp.department }}</td>
-        <td>{{ emp.joining_date }}</td>
-        <td>{{ emp.experience }}</td>
-        <td>{{ emp.skills }}</td>
-        <td>
-            {% if emp.resume %}
-                <a href="{{ emp.resume.url }}">View</a>
-            {% else %}
-                No File
-            {% endif %}
-        </td>
-    </tr>
-    {% endfor %}
+    <!-- TABLE SECTION -->
+    <div class="employee-list-table">
 
-</table>
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Employee ID</th>
+                <th>Job Role</th>
+                <th>Department</th>
+            </tr>
+
+            {% for emp in employees %}
+            <tr>
+                <td>
+                    <a href="#" class="emp-name" data-id="{{ emp.id }}">
+                        {{ emp.employee_name }}
+                    </a>
+                </td>
+                <td>{{ emp.employee_id }}</td>
+                <td>{{ emp.job_role }}</td>
+                <td>{{ emp.department }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <!-- DETAILS SECTION -->
+    <div class="employee-profile-section">
+
+        <h3>Employee Full Details</h3>
+
+        <p><strong>Name:</strong> {{ selected_emp.employee_name }}</p>
+        <p><strong>ID:</strong> {{ selected_emp.employee_id }}</p>
+        <p><strong>Phone:</strong> {{ selected_emp.phone }}</p>
+        <p><strong>Address:</strong> {{ selected_emp.address }}</p>
+        <p><strong>Role:</strong> {{ selected_emp.job_role }}</p>
+        <p><strong>Department:</strong> {{ selected_emp.department }}</p>
+        <p><strong>Joining Date:</strong> {{ selected_emp.joining_date }}</p>
+        <p><strong>Experience:</strong> {{ selected_emp.experience }}</p>
+        <p><strong>Skills:</strong> {{ selected_emp.skills }}</p>
+
+        <br>
+
+
+    </div>
+
+    {% endif %}
+
 </div>
