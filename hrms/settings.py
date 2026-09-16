@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n$m)_lo%76vx5(==#f=+lmr@%72d6w#59v_rkn77gj5xr+2of3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,6 +122,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS= [os.path.join(BASE_DIR,'static')]
+
+# Render లో static ఫైళ్లను ఒకచోట చేర్చడానికి ఈ లైన్ తప్పనిసరి:
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
