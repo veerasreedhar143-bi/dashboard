@@ -1,0 +1,166 @@
+{% extends "employee/base.html" %}
+{% load static %}
+
+{% block overlay %}
+
+<style>
+
+/* Blur Dashboard */
+#dashboardContent{
+    filter: blur(5px);
+}
+
+/* Overlay Background */
+.overlay-wrapper{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(1px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+/* ===== Register Wrapper (IMPORTANT) ===== */
+.register-wrapper{
+    width:380px;
+}
+
+/* ===== Registration Box ===== */
+.register-box{
+    padding:25px;
+    border-radius:12px;
+    background:lightgrey;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+/* Header */
+.register-header h1{
+    margin-bottom:15px;
+    font-size:24px;
+    color:#333;
+}
+
+/* Table */
+.register-wrapper table{
+    width:100%;
+    border-spacing:10px;
+}
+
+.register-wrapper td{
+    font-size:14px;
+    color:#333;
+    text-align:left;
+}
+
+/* Inputs */
+.register-wrapper input,
+.register-wrapper select{
+    width:100%;
+    padding:7px 10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    outline:none;
+}
+
+/* Buttons */
+.register-wrapper button{
+    margin-top:15px;
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+/* Register Button */
+.btn-register{
+    background:#2c3e50;
+    color:white;
+}
+
+/* Login Button */
+.btn-login{
+    background:#555;
+    color:white;
+    margin-top:10px;
+}
+
+</style>
+
+<div class="overlay-wrapper">
+
+<div class="register-wrapper">
+
+<div class="register-box">
+
+<div class="register-header">
+<h1>Registration</h1>
+</div>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<table>
+
+<tr>
+<td>First Name</td>
+<td><input type="text" name="first_name"></td>
+</tr>
+
+<tr>
+<td>Last Name</td>
+<td><input type="text" name="last_name"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email" name="email"></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" name="password"></td>
+</tr>
+
+<tr>
+<td>Mobile</td>
+<td><input type="text" name="mobile"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<select name="gender">
+<option>Male</option>
+<option>Female</option>
+</select>
+</td>
+</tr>
+
+</table>
+
+<button type="submit" class="btn-register">Register</button>
+
+<p>Already registered?</p>
+
+<a href="/ac/login/">
+<button type="button" class="btn-login">Login</button>
+</a>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,12 +1,69 @@
-<div class="attendance-page">
-  <div class="attendance-header">
-    <h1>Attendance overview</h1>
-  </div>
-  <div class="attendance-main">
+{% extends 'employee/base.html' %}
+{% load static %}
 
-    <a href="#">Punch In </a>
+{% block content %}
 
-    <a href="#">Punch Out </a>
-    <a href="#">calendar </a>
-  </div>
+<style>
+.attendance-container{
+    padding:30px;
+}
+
+.attendance-title{
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:30px;
+    color:#2c3e50;
+}
+
+.attendance-actions{
+    display:flex;
+    gap:20px;
+}
+
+.attendance-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#ffffff;
+    border-radius:10px;
+    text-decoration:none;
+    color:#2c3e50;
+    font-weight:600;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:all .25s ease;
+    border:1px solid #e6e6e6;
+}
+
+.attendance-btn:hover{
+    background:#2c3e50;
+    color:white;
+    transform:translateY(-2px);
+}
+
+.attendance-btn.calendar{
+    background:#2c3e50;
+    color:white;
+}
+
+.attendance-btn.calendar:hover{
+    background:#1a252f;
+}
+</style>
+
+
+<div class="attendance-container">
+
+<h1 class="attendance-title">Attendance Overview</h1>
+
+<div class="attendance-actions">
+
+<a href="#" class="attendance-btn">Punch In</a>
+
+<a href="#" class="attendance-btn">Punch Out</a>
+
+<a href="/a/calendar/" class="attendance-btn calendar">Calendar</a>
+
 </div>
+
+</div>
+
+{% endblock %}

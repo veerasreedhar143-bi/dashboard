@@ -21,9 +21,13 @@ from employee.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.homepage),
+    path('', views.homepage, name="homepage"),
     path('e/',include('employee.urls')),
     path('a/',include('attendance.urls')),
+    path('ac/',include('accounts.urls')),
+    path('c/',include('calendar.urls')),
+    path('l/',include('leaves.urls')),
+
 
     path('update_employee/<int:id>/', update_employee),
     path('delete_employee/<int:id>/', delete_employee),

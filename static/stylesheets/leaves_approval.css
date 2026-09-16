@@ -1,0 +1,152 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND (LAVENDER) */
+.attendance-page {
+  background: linear-gradient(135deg, #e6dff5, #cdb4db);
+  min-height: 100vh;
+  padding: 0px;
+}
+
+/* HEADER */
+.attendance-header {
+  background: linear-gradient(135deg, #7b6fc2, #b8a1e3);
+  color: white;
+  text-align: center;
+  padding: 6px;
+  font-size: 26px;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(123, 111, 194, 0.3);
+}
+
+/* BALANCE BOXES */
+.balance-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+/* 🔥 UPDATED BOX SIZE */
+.balance-box {
+  background: white;
+  padding: 18px 15px;   /* reduced height */
+  border-radius: 12px;
+  width: 200px;
+  min-height: 90px;     /* reduced height */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  box-shadow: 0 10px 25px rgba(123, 111, 194, 0.15);
+  position: relative;
+}
+
+/* 🔥 LIGHT BOLD TEXT */
+.balance-box h2 {
+  font-weight: 600;
+  color: #5a4fa3;
+  margin-bottom: 4px;
+}
+
+/* TOP LABEL */
+.top-label {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7b6fc2;
+  color: white;
+  padding: 3px 10px;
+  font-size: 11px;
+  border-radius: 20px;
+}
+
+.balance-box small {
+  color: #555;
+}
+
+/* FORM CARD */
+.leave-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 25px auto;
+  max-width: 850px;
+  box-shadow: 0 12px 30px rgba(123, 111, 194, 0.2);
+}
+
+/* ROW */
+.leave-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
+
+/* FIELD */
+.leave-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.leave-field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #5a4fa3;
+}
+
+/* INPUTS */
+.leave-field input,
+.leave-field select,
+.leave-field textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* FOCUS EFFECT */
+.leave-field input:focus,
+.leave-field select:focus,
+.leave-field textarea:focus {
+  border-color: #7b6fc2;
+  outline: none;
+  box-shadow: 0 0 6px rgba(123, 111, 194, 0.4);
+}
+
+/* REASON */
+.reason-field {
+  flex: 2;
+}
+
+/* BUTTON */
+.leave-submit button {
+  background: #7b6fc2;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.leave-submit button:hover {
+  background: #5a4fa3;
+}
+
+/* INFO */
+.leave-info {
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #333;
+}

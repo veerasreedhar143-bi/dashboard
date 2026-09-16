@@ -1,56 +1,66 @@
+{% extends 'employee/base.html' %}
+
+{% block content %}
+
 <div class="employee-list-wrapper">
 
-    {% if not selected_emp %}
+{% if not selected_emp %}
 
-    <!-- TABLE SECTION -->
-    <div class="employee-list-table">
+<div class="employee-list-table">
 
-        <table>
-            <tr>
-                <th>Employee Name</th>
-                <th>Employee ID</th>
-                <th>Job Role</th>
-                <th>Department</th>
-            </tr>
+<table>
 
-            {% for emp in employees %}
-            <tr>
-                <td>
-                    <a href="#" class="emp-name" data-id="{{ emp.id }}">
-                        {{ emp.employee_name }}
-                    </a>
-                </td>
-                <td>{{ emp.employee_id }}</td>
-                <td>{{ emp.job_role }}</td>
-                <td>{{ emp.department }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+<tr>
+<th>Employee Name</th>
+<th>Employee ID</th>
+<th>Job Role</th>
+<th>Department</th>
+</tr>
 
-    </div>
+{% for emp in employees %}
 
-    {% else %}
+<tr>
 
-    <!-- DETAILS SECTION -->
-    <div class="employee-profile-section">
+<td>
+<a href="{% url 'employee_list' %}?id={{ emp.id }}">
+{{ emp.employee_name }}
+</a>
+</td>
 
-        <h3>Employee Full Details</h3>
+<td>{{ emp.employee_id }}</td>
+<td>{{ emp.job_role }}</td>
+<td>{{ emp.department }}</td>
 
-        <p><strong>Name:</strong> {{ selected_emp.employee_name }}</p>
-        <p><strong>ID:</strong> {{ selected_emp.employee_id }}</p>
-        <p><strong>Phone:</strong> {{ selected_emp.phone }}</p>
-        <p><strong>Address:</strong> {{ selected_emp.address }}</p>
-        <p><strong>Role:</strong> {{ selected_emp.job_role }}</p>
-        <p><strong>Department:</strong> {{ selected_emp.department }}</p>
-        <p><strong>Joining Date:</strong> {{ selected_emp.joining_date }}</p>
-        <p><strong>Experience:</strong> {{ selected_emp.experience }}</p>
-        <p><strong>Skills:</strong> {{ selected_emp.skills }}</p>
+</tr>
 
-        <br>
+{% endfor %}
 
-
-    </div>
-
-    {% endif %}
+</table>
 
 </div>
+
+{% else %}
+
+<div class="employee-profile-section">
+
+<h3>Employee Full Details</h3>
+
+<p><strong>Name:</strong> {{ selected_emp.employee_name }}</p>
+<p><strong>ID:</strong> {{ selected_emp.employee_id }}</p>
+<p><strong>Phone:</strong> {{ selected_emp.phone }}</p>
+<p><strong>Address:</strong> {{ selected_emp.address }}</p>
+<p><strong>Role:</strong> {{ selected_emp.job_role }}</p>
+<p><strong>Department:</strong> {{ selected_emp.department }}</p>
+<p><strong>Joining Date:</strong> {{ selected_emp.joining_date }}</p>
+<p><strong>Experience:</strong> {{ selected_emp.experience }}</p>
+<p><strong>Skills:</strong> {{ selected_emp.skills }}</p>
+
+<a href="{% url 'employee_list' %}">Back</a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

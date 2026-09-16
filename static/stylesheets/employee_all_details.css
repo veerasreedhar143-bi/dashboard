@@ -1,0 +1,52 @@
+.employee-all-details {
+     margin: 0;
+     padding: 40px;
+     font-family: Arial, sans-serif;
+     background: #e9edf2; /* Light grey background */
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 20px 40px;
+   }
+
+   /* ===== HEADING ===== */
+   .employee-all-details h2 {
+     grid-column: 1 / -1;
+     text-align: center;
+     margin-bottom: 30px;
+     color: white;
+     font-weight: 600;
+     background: blue;
+     padding: 10px;
+     margin: 30px;
+   }
+
+   /* ===== DETAIL BOX ===== */
+   .employee-all-details p {
+     background: #ffffff;
+     padding: 14px 18px;
+     border-radius: 10px;
+     margin: 0;
+     font-size: 15px;
+     color: #2c3e50;
+
+     /* soft shadow like second image */
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+     /* width slightly reduced */
+     width: 85%;
+     justify-self: center;
+
+     transition: all 0.2s ease;
+   }
+
+   /* ===== HOVER EFFECT (Blue feel) ===== */
+   .employee-all-details p:hover {
+     background: #f2f6ff;
+     transform: translateY(-2px);
+   }
+
+   /* ===== LABEL STYLE ===== */
+   .employee-all-detailsstrong {
+     color: #2563eb; /* Blue accent */
+     font-weight: 600;
+   }

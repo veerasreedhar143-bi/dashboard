@@ -1,3 +1,9 @@
+{% extends "employee/base.html" %}
+
+{% block content %}
+
+<div class="employee-all-details">
+
 <h2>Employee Full Details</h2>
 
 <p><strong>Name:</strong> {{ selected_emp.employee_name }}</p>
@@ -11,3 +17,9 @@
 <p><strong>Skills:</strong> {{ selected_emp.skills }}</p>
 
 <br>
+
+<a href="{% url 'employee_list' %}">← Back to Employee List</a>
+
+</div>
+
+{% endblock %}

@@ -1,61 +1,97 @@
-/* MAIN WRAPPER */
+/* ===== Reset Basic ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== Page Background ===== */
+body{
+    background:#f3f4f6;
+}
+
+/* ===== Wrapper ===== */
 .employee-list-wrapper{
-    display: flex;
-    gap: 40px;
-    padding: 40px;
-    align-items: flex-start;
+    padding:50px;
+    display:flex;
+    justify-content:center;
 }
 
-/* LEFT TABLE */
+/* ===== Card Container ===== */
 .employee-list-table{
-    flex: 1;   /* Important */
+    width:90%;
+    background:#ffffff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* TABLE STYLE */
+/* ===== Table ===== */
 .employee-list-table table{
-    width: 100%;
-    border-collapse: collapse;
-    background: #2e3440;
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width:100%;
+    border-collapse:collapse;
 }
 
-.employee-list-table th,
-.employee-list-table td{
-    padding: 12px;
-    border: 1px solid #444;
-}
-
+/* ===== Table Header ===== */
 .employee-list-table th{
-    background: #3b4252;
+    background:#2563eb;   /* Professional Blue */
+    color:#ffffff;
+    padding:18px;
+    text-align:left;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.3px;
 }
 
-.employee-list-table tr:hover{
-    background: #434c5e;
+/* ===== Header Rounded Corners ===== */
+.employee-list-table th:first-child{
+    border-top-left-radius:8px;
 }
 
-/* CLICK NAME */
+.employee-list-table th:last-child{
+    border-top-right-radius:8px;
+}
+
+/* ===== Table Data Cells ===== */
+.employee-list-table td{
+    padding:18px;
+    font-size:14px;
+    color:#374151;
+}
+
+/* ===== Alternating Row Colors (Header Ignored) ===== */
+.employee-list-table table tr:not(:first-child):nth-child(odd){
+    background:#ffffff;
+}
+
+.employee-list-table table tr:not(:first-child):nth-child(even){
+    background:#f1f5f9;
+}
+
+/* ===== Row Hover Effect ===== */
+.employee-list-table table tr:not(:first-child):hover{
+    background:#e0e7ff;
+    transition:0.2s ease-in-out;
+}
+
+/* ===== Employee Name Link ===== */
 .emp-name{
-    cursor: pointer;
-    padding: 6px 10px;
-    background: #4c566a;
-    border-radius: 5px;
-    display: inline-block;
+    text-decoration:none;
+    color:#2563eb;
+    font-weight:500;
 }
 
 .emp-name:hover{
-    background: #88c0d0;
-    color: black;
+    color:#1d4ed8;
+    text-decoration:underline;
 }
 
-/* RIGHT PROFILE PANEL */
-.employee-list-profile{
-    flex: 1;   /* Important */
-    padding: 20px;
+/* ===== Smooth Table Look ===== */
+.employee-list-table table tr{
+    border-bottom:1px solid #e5e7eb;
 }
 
-/* Placeholder */
-.placeholder{
-    color: #777;
-    font-size: 18px;
+.employee-list-table table tr:last-child{
+    border-bottom:none;
 }

@@ -3,6 +3,7 @@ from employee.views import *
 
 urlpatterns = [
 
+    
     path('employee/', employee_details),
     path('employee_list/', employee_list, name='employee_list'),
     path('add_edit_employee/', add_edit_employee),

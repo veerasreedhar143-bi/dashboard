@@ -5,7 +5,11 @@ from employee.forms import Employee_mode_form
 
 # Create your views here.
 def homepage(request):
-    return render(request,"employee/base.html")
+
+    if not request.session.get("user"):
+        return redirect("login")
+
+    return render(request, "employee/base.html")
 
 # employee view
 def employee_details(request):

@@ -1,0 +1,74 @@
+{% extends "employee/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'stylesheets/leaves_approval.css' %}">
+
+<div class="attendance-page">
+     <div class="attendance-header">
+       <h2>Apply Leave</h2>
+     </div>
+
+     <!-- BALANCE BOXES -->
+     <div class="balance-container">
+       <div class="balance-box">
+         <div class="top-label">Balance</div>
+         <small>Pending:</small>
+       </div>
+
+       <div class="balance-box">
+         <div class="top-label">Quaterley crediated</div>
+         <small>Pending:</small>
+       </div>
+     </div>
+
+     <!-- FORM -->
+     <div class="leave-card">
+       <form>
+         <div class="leave-row">
+           <div class="leave-field">
+             <label>Leave Type</label>
+             <select>
+               <option>Select Leave</option>
+               <option>Casual Leave</option>
+               <option>Sick Leave</option>
+               <option>Earned Leave</option>
+               <option>LOP</option>
+             </select>
+           </div>
+
+           <div class="leave-field">
+             <label>Start Date</label>
+             <input type="date" />
+           </div>
+
+           <div class="leave-field">
+             <label>End Date</label>
+             <input type="date" />
+           </div>
+         </div>
+
+         <div class="leave-info">
+           <p><strong>Total Leave Days:</strong> 0</p>
+           <p><strong>Leave Balance:</strong> 10</p>
+         </div>
+
+         <div class="leave-row">
+           <div class="leave-field reason-field">
+             <label>Reason</label>
+             <textarea rows="4"></textarea>
+           </div>
+
+           <div class="leave-field">
+             <label>Attach Document</label>
+             <input type="file" />
+           </div>
+
+           <div class="leave-submit">
+             <button>Apply Leave</button>
+           </div>
+         </div>
+       </form>
+     </div>
+   </div>
+{% endblock %}
